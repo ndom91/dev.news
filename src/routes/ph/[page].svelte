@@ -55,7 +55,3 @@
     {/if}
   {/each}
 </div>
-
-{#if next}
-  <a class="more" href={next}>More...</a>
-{/if}

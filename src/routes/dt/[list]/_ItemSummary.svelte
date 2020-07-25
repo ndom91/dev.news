@@ -48,33 +48,17 @@
     line-height: 1;
   }
 
-  .cover-image {
-    height: 3rem;
-  }
-
-  .item-details {
-    padding: 0 1em;
-  }
-
   @media all and (max-width: 600px) {
     article {
       flex-direction: column;
-    }
-    .cover-image {
-      height: auto;
-      width: 100%;
-    }
-    .item-details {
-      padding: 1em;
     }
   }
 </style>
 
 <article>
-  <img src={item.social_image} alt="Cover" class="cover-image" />
   <div class="item-details">
     <h2>
-      <a href={item.domain ? item.url : `/item/${item.id}`}>
+      <a href={item.url}>
         {item.title}
         {#if item.domain}
           <small>({item.domain})</small>
@@ -93,11 +77,12 @@
           href="https://dev.to/{item.user.username}">
           {item.user.username}
         </a>
-        {item.readable_publish_date} |
-        <a alt="Comments Link" rel="prefetch" href="item/{item.id}">
-          {item.comments_count}
-          {item.comments_count === 1 ? 'comment' : 'comments'}
-        </a>
+        {item.readable_publish_date}
+        {#if item.comments_count > 0}
+          <span>
+            | {item.comments_count} {item.comments_count === 1 ? 'comment' : 'comments'}
+          </span>
+        {/if}
       </p>
     {/if}
 

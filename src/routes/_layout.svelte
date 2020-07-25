@@ -4,6 +4,7 @@
   import PreloadingIndicator from "../components/PreloadingIndicator.svelte";
 
   const { preloading } = stores();
+  export let segment;
 </script>
 
 <style>
@@ -23,4 +24,4 @@
   <slot />
 </main>
 
-<NavBottom />
+<NavBottom {segment} />

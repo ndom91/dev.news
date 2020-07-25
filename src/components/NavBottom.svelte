@@ -1,7 +1,9 @@
 <script>
   import ThemeToggler from "../components/ThemeToggler.svelte";
 
-  export let product;
+  export let segment;
+
+  console.log(segment);
 </script>
 
 <style>
@@ -36,33 +38,11 @@
     display: flex;
     justify-content: space-around;
     margin: 0;
-    padding: 0;
-  }
-
-  ul::after {
-    content: "";
-    display: block;
-    clear: both;
+    padding: 0 20px;
   }
 
   li {
     list-style: none;
-  }
-
-  .selected {
-    position: relative;
-    display: inline-block;
-    color: var(--fg);
-  }
-
-  .selected::after {
-    position: absolute;
-    content: "";
-    width: calc(100% - 1em);
-    height: 2px;
-    background-color: #ff6600;
-    display: block;
-    bottom: 0;
   }
 
   a {
@@ -84,6 +64,12 @@
     background: #000;
     border-radius: 5px;
   }
+
+  .dt-li {
+    width: 64px;
+    display: flex;
+    justify-content: center;
+  }
 </style>
 
 <nav>
@@ -92,20 +78,20 @@
     <li>
       <a
         rel="prefetch"
-        class={product === 'hn' ? 'selected' : ''}
+        class={segment === 'hn' ? 'selected' : ''}
         href="hn/top/1">
         <img alt="HackerNews" class="icon" src="ycombinator.svg" />
       </a>
     </li>
     <li>
-      <a rel="prefetch" class={product === 'ph' ? 'selected' : ''} href="ph/1">
+      <a rel="prefetch" class={segment === 'ph' ? 'selected' : ''} href="ph/1">
         <img alt="ProductHunt" class="icon" src="producthunt.svg" />
       </a>
     </li>
-    <li>
+    <li class="dt-li">
       <a
         rel="prefetch"
-        class={product === 'dt' ? 'dt selected' : 'dt'}
+        class={segment === 'dt' ? 'dt selected' : 'dt'}
         href="dt/rising/1">
         <img alt="Dev.to" class="icon" src="devto_white.svg" />
       </a>

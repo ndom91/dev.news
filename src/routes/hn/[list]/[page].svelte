@@ -55,6 +55,17 @@
   .wrapper {
     padding: 2em;
   }
+  .more {
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: auto;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid var(--fg-light);
+    text-align: center;
+    text-decoration: none;
+  }
 </style>
 
 <svelte:head>
@@ -73,8 +84,8 @@
       <ItemSummary {item} index={start + i} />
     {/if}
   {/each}
-</div>
 
-{#if next}
-  <a class="more" href={next}>More...</a>
-{/if}
+  {#if next}
+    <a class="more" href={next}>More</a>
+  {/if}
+</div>

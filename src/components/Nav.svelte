@@ -182,7 +182,7 @@
             rel="prefetch"
             class={filter === 'all' ? 'selected' : ''}
             href="dt/all/1">
-            all
+            top
           </a>
         </li>
 

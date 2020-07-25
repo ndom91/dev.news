@@ -41,16 +41,9 @@
     line-height: 1;
   }
 
-  .item-details {
-    padding: 0 1em;
-  }
-
   @media all and (max-width: 600px) {
     article {
       flex-direction: column;
-    }
-    .item-details {
-      padding: 1em;
     }
   }
 </style>
@@ -68,11 +61,7 @@
         href="https://dev.to/{item.author}">
         {item.author}
       </a>
-      {item.pubDate} |
-      <a alt="Comments Link" rel="prefetch" href="item/{item.id}">
-        {item.comments_count}
-        {item.comments_count === 1 ? 'comment' : 'comments'}
-      </a>
+      {new Date(item.pubDate).toLocaleString('de-DE')}
     </p>
 
     <span class="index">{index}</span>
