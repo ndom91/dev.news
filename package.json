@@ -1,7 +1,7 @@
 {
   "name": "dev.news",
   "description": "HN, ProductHunt, dev.to News Client",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "scripts": {
     "dev": "sapper dev",
     "start": "node __sapper__/build",
@@ -14,6 +14,7 @@
   "dependencies": {
     "@polka/send": "^0.4.0",
     "compression": "^1.7.4",
+    "dayjs": "^1.8.30",
     "node-fetch": "^2.6.0",
     "polka": "^0.5.2",
     "sirv": "^0.4.2",

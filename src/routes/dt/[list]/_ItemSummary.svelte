@@ -78,11 +78,6 @@
           {item.user.username}
         </a>
         {item.readable_publish_date}
-        {#if item.comments_count > 0}
-          <span>
-            | {item.comments_count} {item.comments_count === 1 ? 'comment' : 'comments'}
-          </span>
-        {/if}
       </p>
     {/if}
 

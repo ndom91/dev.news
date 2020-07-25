@@ -3,6 +3,16 @@
     padding: 1em;
     height: calc(100vh - 90px);
   }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  .header > h1 {
+    margin: 0;
+    margin-left: 10px;
+    line-height: 0;
+  }
 </style>
 
 <svelte:head>
@@ -10,7 +20,10 @@
 </svelte:head>
 
 <div class="wrapper">
-  <h1>About this app</h1>
+  <div class="header">
+    <img src="favicon.png" alt="logo" height="54" />
+    <h1>About this app</h1>
+  </div>
 
   <p>
     This is a simple Hacker News clone, built with

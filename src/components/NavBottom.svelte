@@ -2,8 +2,6 @@
   import ThemeToggler from "../components/ThemeToggler.svelte";
 
   export let segment;
-
-  console.log(segment);
 </script>
 
 <style>

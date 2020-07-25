@@ -1,4 +1,5 @@
 <script>
+  import dayjs from "dayjs";
   export let item;
   export let index;
 </script>
@@ -61,7 +62,7 @@
         href="https://dev.to/{item.author}">
         {item.author}
       </a>
-      {new Date(item.pubDate).toLocaleString('de-DE')}
+      {dayjs(item.pubDate).format('MMM DD')}
     </p>
 
     <span class="index">{index}</span>
