@@ -1,24 +1,21 @@
-# hn.svelte.dev
+# dev.news
 
-Hacker News clone built with [Svelte](https://svelte.dev) and [Sapper](https://sapper.svelte.dev), using [hnpwa-api](https://github.com/davideast/hnpwa-api) by David East.
+Developer News App including: HackerNews, ProductHunt, dev.to
 
+## Getting Started
 
-## Running locally
-
-Clone the repo...
-
+1. Clone the repo
 ```
-git clone git@github.com:sveltejs/hn.svelte.dev.git
-cd hn.svelte.dev
+git clone https://github.com/ndom91/dev.news
+cd dev.news
 ```
 
-...install dependencies...
-
+2. Install dependencies
 ```
 npm install
 ```
 
-...then start the development server:
+3. Start dev server
 
 ```
 npm run dev -- --open
@@ -30,8 +27,12 @@ To build a production version...
 npm run sapper
 ```
 
-...then follow the instructions to serve the app.
+## Thanks
 
+- [Svelte](https://svelte.dev) 
+- [Sapper](https://sapper.svelte.dev)
+- [hnpwa-api](https://github.com/davideast/hnpwa-api) by David East
+- [Svetle HN Dem](https://github.com/sveltejs/hn.svelte.dev)
 
 ## License
 
