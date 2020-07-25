@@ -5,17 +5,19 @@
   "scripts": {
     "dev": "sapper dev",
     "start": "node __sapper__/build",
-    "build": "sapper build",
-    "export": "sapper export",
+    "build": "sapper build --legacy",
+    "export": "sapper export --legacy",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run"
   },
   "dependencies": {
     "@polka/send": "^0.4.0",
+    "compression": "^1.7.4",
     "node-fetch": "^2.6.0",
     "polka": "^0.5.2",
-    "sirv": "^0.4.2"
+    "sirv": "^0.4.2",
+    "vercel-sapper": "^0.41.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
