@@ -1,93 +1,190 @@
 <script>
-	export let segment;
+  export let product;
+  export let filter;
 </script>
 
 <style>
-	nav {
-		/* background-color: rgba(255, 102, 0, 0.05); */
-		border-bottom: 1px solid #ff6600;
-		color: var(--fg-light);
-		font-weight: 300;
-		padding: 0 1em;
-	}
+  .wrapper {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bg);
+    z-index: 99;
+  }
+  nav {
+    /* background-color: rgba(255, 102, 0, 0.05); */
+    border-bottom: 1px solid #ff6600;
+    color: var(--fg-light);
+    font-weight: 300;
+    padding: 0 1em;
+  }
 
-	.icon {
-		display: block;
-		width: 1em;
-		height: 1em;
-		float: left;
-		font-size: 2em;
-		position: relative;
-		top: 0.4em;
-		box-sizing: border-box;
-		margin: 0 0.5em 0 0;
-	}
+  .icon {
+    display: block;
+    width: 1em;
+    height: 1em;
+    float: left;
+    font-size: 2em;
+    position: relative;
+    top: 0.4em;
+    box-sizing: border-box;
+    margin: 0 0.5em 0 0;
+  }
 
-	ul {
-		margin: 0;
-		padding: 0;
-	}
+  ul {
+    margin: 0;
+    padding: 0;
+  }
 
-	ul::after {
-		content: '';
-		display: block;
-		clear: both;
-	}
+  ul::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 
-	li {
-		display: block;
-		float: left;
-	}
+  li {
+    display: block;
+    float: left;
+  }
 
-	.about {
-		float: right;
-	}
+  .about {
+    float: right;
+  }
 
-	.selected {
-		position: relative;
-		display: inline-block;
-		color: var(--fg);
-	}
+  .selected {
+    position: relative;
+    display: inline-block;
+    color: var(--fg);
+  }
 
-	.selected::after {
-		position: absolute;
-		content: '';
-		width: calc(100% - 1em);
-		height: 2px;
-		background-color: #ff6600;
-		display: block;
-		bottom: 0;
-	}
+  .selected::after {
+    position: absolute;
+    content: "";
+    width: calc(100% - 1em);
+    height: 2px;
+    background-color: #ff6600;
+    display: block;
+    bottom: 0;
+  }
 
-	a {
-		color: inherit;
-		text-decoration: none;
-		padding: 1em 0.5em;
-		display: block;
-		font-weight: 500;
-	}
+  a {
+    color: inherit;
+    text-decoration: none;
+    padding: 1em 0.5em;
+    display: block;
+    font-weight: 500;
+  }
 
-	@media (min-width: 400px) {
-		.icon {
-			margin: 0 0.5em 0 0;
-		}
+  @media (min-width: 400px) {
+    .icon {
+      margin: 0 0.5em 0 0;
+    }
 
-		li {
-			display: inline-block;
-		}
-	}
+    li {
+      display: inline-block;
+    }
+  }
+  @media all and (max-width: 600px) {
+    .wrapper {
+      width: 100vw;
+    }
+  }
 </style>
 
-<nav>
-	<img alt="Svelte Hacker News logo" class="icon" src="favicon.png">
+<div class="wrapper">
+  {#if product === 'hn'}
+    <nav>
+      <img alt="Svelte Hacker News logo" class="icon" src="ycombinator.svg" />
 
-	<ul>
-		<li><a rel="prefetch" class='{segment === "top" ? "selected" : ""}' href='top/1'>top</a></li>
-		<li><a rel="prefetch" class='{segment === "new" ? "selected" : ""}' href='new/1'>new</a></li>
-		<li><a rel="prefetch" class='{segment === "show"? "selected" : ""}' href='show/1'>show</a></li>
-		<li><a rel="prefetch" class='{segment === "ask" ? "selected" : ""}' href='ask/1'>ask</a></li>
-		<li><a rel="prefetch" class='{segment === "jobs" ? "selected" : ""}' href='jobs/1'>jobs</a></li>
+      <ul>
+        <li>
+          <a
+            rel="prefetch"
+            class={filter === 'top' ? 'selected' : ''}
+            href="hn/top/1">
+            top
+          </a>
+        </li>
+        <li>
+          <a
+            rel="prefetch"
+            class={filter === 'new' ? 'selected' : ''}
+            href="hn/new/1">
+            new
+          </a>
+        </li>
+        <li>
+          <a
+            rel="prefetch"
+            class={filter === 'show' ? 'selected' : ''}
+            href="hn/show/1">
+            show
+          </a>
+        </li>
+        <li>
+          <a
+            rel="prefetch"
+            class={filter === 'ask' ? 'selected' : ''}
+            href="hn/ask/1">
+            ask
+          </a>
+        </li>
+        <li>
+          <a
+            rel="prefetch"
+            class={filter === 'jobs' ? 'selected' : ''}
+            href="hn/jobs/1">
+            jobs
+          </a>
+        </li>
 
-		<li class='about'><a rel="prefetch" class='{segment === "about" ? "selected" : ""}' href='about'>about</a></li>
-	</ul>
-</nav>
+        <li class="about">
+          <a
+            rel="prefetch"
+            class={filter === 'about' ? 'selected' : ''}
+            href="about">
+            about
+          </a>
+        </li>
+      </ul>
+    </nav>
+  {:else if product === 'dt'}
+    <nav>
+      <img alt="Dev.to Logo" class="icon" src="devto.svg" />
+      <ul>
+        <li class="rising">
+          <a
+            rel="prefetch"
+            class={filter === 'rising' ? 'selected' : ''}
+            href="dt/rising/1">
+            rising
+          </a>
+        </li>
+        <li class="fresh">
+          <a
+            rel="prefetch"
+            class={filter === 'fresh' ? 'selected' : ''}
+            href="dt/fresh/1">
+            fresh
+          </a>
+        </li>
+        <li class="all">
+          <a
+            rel="prefetch"
+            class={filter === 'all' ? 'selected' : ''}
+            href="dt/all/1">
+            all
+          </a>
+        </li>
+      </ul>
+    </nav>
+  {:else if product === 'ph'}
+    <nav>
+      <ul>
+        <li>Top</li>
+      </ul>
+    </nav>
+  {/if}
+
+</div>

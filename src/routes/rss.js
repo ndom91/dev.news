@@ -1,3 +1,3 @@
 export function get(req, res) {
-	res.redirect('/top/rss');
+  res.redirect("/hn/top/rss");
 }
