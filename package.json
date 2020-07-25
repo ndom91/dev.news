@@ -1,7 +1,7 @@
 {
-  "name": "hn.svelte.dev",
-  "description": "hn.svelte.dev",
-  "version": "1.0.0",
+  "name": "dev.news",
+  "description": "HN, ProductHunt, dev.to News Client",
+  "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
     "sapper": "sapper build --legacy",
