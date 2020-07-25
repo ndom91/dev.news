@@ -48,7 +48,7 @@
   const PAGE_SIZE = 30;
 
   $: start = 1 + (page - 1) * PAGE_SIZE;
-  $: next = `/${list}/${+page + 1}`;
+  $: next = `/hn/${list}/${+page + 1}`;
 </script>
 
 <style>

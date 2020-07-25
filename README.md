@@ -33,7 +33,8 @@ npm run sapper
 
 - [Svelte](https://svelte.dev)
 - [Sapper](https://sapper.svelte.dev)
-- [hnpwa-api](https://github.com/davideast/hnpwa-api)
+- HackerNews API: [hnpwa-api](https://github.com/davideast/hnpwa-api)
+- Dev.to API: [docs.dev.to](https://docs.dev.to/api)
 - [Svetle HN Demo](https://github.com/sveltejs/hn.svelte.dev)
 
 ## License

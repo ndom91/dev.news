@@ -75,6 +75,15 @@
     display: grid;
     place-items: center;
   }
+
+  .dt {
+    margin-top: 10px;
+    width: 35px;
+    height: 35px;
+    padding: 0 5px 0 5px;
+    background: #000;
+    border-radius: 5px;
+  }
 </style>
 
 <nav>
@@ -89,19 +98,16 @@
       </a>
     </li>
     <li>
-      <a
-        rel="prefetch"
-        class={product === 'ph' ? 'selected' : ''}
-        href="ph/top/1">
+      <a rel="prefetch" class={product === 'ph' ? 'selected' : ''} href="ph/1">
         <img alt="ProductHunt" class="icon" src="producthunt.svg" />
       </a>
     </li>
     <li>
       <a
         rel="prefetch"
-        class={product === 'dt' ? 'selected' : ''}
+        class={product === 'dt' ? 'dt selected' : 'dt'}
         href="dt/rising/1">
-        <img alt="Dev.to" class="icon" src="devto.svg" />
+        <img alt="Dev.to" class="icon" src="devto_white.svg" />
       </a>
     </li>
     <li>

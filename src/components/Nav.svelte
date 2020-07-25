@@ -76,6 +76,14 @@
     font-weight: 500;
   }
 
+  .dt {
+    width: 35px;
+    height: 30px;
+    padding: 0 5px 0 5px;
+    background: #000;
+    border-radius: 5px;
+  }
+
   @media (min-width: 400px) {
     .icon {
       margin: 0 0.5em 0 0;
@@ -151,7 +159,7 @@
     </nav>
   {:else if product === 'dt'}
     <nav>
-      <img alt="Dev.to Logo" class="icon" src="devto.svg" />
+      <img alt="Dev.to Logo" class="dt icon" src="devto_white.svg" />
       <ul>
         <li class="rising">
           <a
@@ -177,12 +185,33 @@
             all
           </a>
         </li>
+
+        <li class="about">
+          <a
+            rel="prefetch"
+            class={filter === 'about' ? 'selected' : ''}
+            href="about">
+            about
+          </a>
+        </li>
       </ul>
     </nav>
   {:else if product === 'ph'}
     <nav>
+      <img alt="Dev.to Logo" class="icon" src="producthunt.svg" />
       <ul>
-        <li>Top</li>
+        <li class="all">
+          <a rel="prefetch" class="selected" href="ph/1">all</a>
+        </li>
+
+        <li class="about">
+          <a
+            rel="prefetch"
+            class={filter === 'about' ? 'selected' : ''}
+            href="about">
+            about
+          </a>
+        </li>
       </ul>
     </nav>
   {/if}
