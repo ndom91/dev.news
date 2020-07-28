@@ -1,3 +1,5 @@
+<img align="right" src="https://imgur.com/3wN64nB.png" width="250" />
+
 # dev.news
 
 Developer News App including: HackerNews, ProductHunt, dev.to
