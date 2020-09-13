@@ -15,7 +15,7 @@
     "@polka/send": "^0.4.0",
     "compression": "^1.7.4",
     "dayjs": "^1.8.30",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "polka": "^0.5.2",
     "sirv": "^0.4.2",
     "vercel-sapper": "^0.41.0"
